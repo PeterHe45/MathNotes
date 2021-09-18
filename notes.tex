@@ -1,0 +1,102 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+%\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+%\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=15mm,
+ }
+
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{enumerate}
+\usepackage{arcs}
+\usepackage{cancel}
+\usepackage{xfrac}
+\usepackage{tikz}
+
+%SetFonts
+
+%SetFonts
+
+\usepackage[inline]{asymptote}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+%\rhead{Teacher David @ 18601688612}
+\lhead{\leftmark}
+
+
+\title{Math Notes}
+\author{Peter He}
+%\date{}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+
+
+
+\section{Linear Functions}
+\subsection{$y=kx$}
+1. $k\ne0$\\
+2. The line passes through the fixed point $(0,0)$\\
+3. $k$ is the gradient of the line\\
+4. If the line passes through another point $(a,b)$, then $k=\frac{b-0}{a-0}=\frac{b}{a}$\\
+
+
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+
+\draw[blue] (-1,-2) -- (2,4);
+\draw[->,thick] (-3,0) -- (3,0);
+\draw[->,thick] (0,-3) -- (0,3);
+\filldraw(1,2)circle(1pt);
+
+\coordinate [label=below:$x$] (x) at (3,0);
+\coordinate [label=left:$y$] (y) at (0,3);
+\coordinate [label=right:{$(a, b)$}] (a) at (1,2);
+
+
+\end{tikzpicture}
+\end{center}
+
+
+
+\subsection{$y=kx+b$}
+
+
+
+
+
+
+
+
+
+
+
+\renewcommand{\labelenumii}{(\arabic{enumii})}
+
+
+\begin{enumerate}
+\renewcommand{\labelenumi}{1.\arabic{enumi}}
+
+\item \label{rule:add} \emph{Addition Principle}. If there are $a$ varieties of soup and $b$ varieties of salad, then there are $a+b$ possible ways to order a meal of soup \emph{or} salad (but not both soup and salad). 
+
+\end{enumerate}
+
+
+
+
+\end{document} 
