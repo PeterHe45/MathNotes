@@ -50,16 +50,21 @@
 
 \section{Linear Functions}
 \subsection{$y=kx$}
-1. $k\ne0$\\
-2. The line passes through the fixed point $(0,0)$\\
-3. $k$ is the gradient of the line\\
-4. If the line passes through another point $(a,b)$, then $k=\frac{b-0}{a-0}=\frac{b}{a}$\\
+\begin{enumerate}
+%\renewcommand{\labelenumi}{1.\arabic{enumi}}
 
+\item $k\ne0$.
+\item The line passes through the fixed point $(0,0)$.
+\item $k$ is the gradient of the line.
+\item If the line passes through another point $(a,b)$, then $k=\frac{b-0}{a-0}=\frac{b}{a}$, and therfore, $y=\frac{b}{a} x$.
+\item If we move the line along the $y$-axis up for $b$ units, we will get another function $y=kx+b$. 
+\end{enumerate}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.7]
 
 \draw[blue] (-1,-2) -- (2,4);
+\draw[red] (-1,0) -- (2,6);
 \draw[->,thick] (-3,0) -- (3,0);
 \draw[->,thick] (0,-3) -- (0,3);
 \filldraw(1,2)circle(1pt);
@@ -67,6 +72,8 @@
 \coordinate [label=below:$x$] (x) at (3,0);
 \coordinate [label=left:$y$] (y) at (0,3);
 \coordinate [label=right:{$(a, b)$}] (a) at (1,2);
+\coordinate [label=below:{$y=kx$}] (k) at (3.5,4);
+\coordinate [label=below:{$y=kx+b$}] (l) at (3.5,6);
 
 
 \end{tikzpicture}
@@ -75,26 +82,25 @@
 
 
 \subsection{$y=kx+b$}
-
-
-
-
-
-
-
-
-
-
-
-\renewcommand{\labelenumii}{(\arabic{enumii})}
-
-
 \begin{enumerate}
-\renewcommand{\labelenumi}{1.\arabic{enumi}}
 
-\item \label{rule:add} \emph{Addition Principle}. If there are $a$ varieties of soup and $b$ varieties of salad, then there are $a+b$ possible ways to order a meal of soup \emph{or} salad (but not both soup and salad). 
 
+\item If $k>0$, the line is increasing; if $k<0$, the line is decreasing.
+\item The line intersects with the $y$-axis at point $(0,b)$.
+\item Point Slope Form: If the slope is $k$, and the line passes through point $(x_0,y_0)$, then \[y=k(x-x_0)+y_0\].
+\item Any two distinctive points $(x_1,y_1), (x_2,y_2)$ determine a line, where $k=\frac{y_2-y_1}{x_2-x_1}$ and \[y=\frac{y_2-y_1}{x_2-x_1}(x-x_1)+y_1\] or  \[y=\frac{y_2-y_1}{x_2-x_1}(x-x_2)+y_2\]
 \end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
