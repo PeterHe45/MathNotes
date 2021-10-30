@@ -89,6 +89,7 @@
 \item The line intersects with the $y$-axis at point $(0,b)$.
 \item Point Slope Form: If the slope is $k$, and the line passes through point $(x_0,y_0)$, then \[y=k(x-x_0)+y_0\].
 \item Any two distinctive points $(x_1,y_1), (x_2,y_2)$ determine a line, where $k=\frac{y_2-y_1}{x_2-x_1}$ and \[y=\frac{y_2-y_1}{x_2-x_1}(x-x_1)+y_1\] or  \[y=\frac{y_2-y_1}{x_2-x_1}(x-x_2)+y_2\]
+\item The derivative of $y$ at ay point on the line is $k$.
 \end{enumerate}
 
 
@@ -101,11 +102,86 @@ y&=ax^2+bx+c\\
 &=a\left[(x+\frac{b}{2a})^2-\frac{b^2}{4a^2}+\frac{4ac}{4a^2}\right]\\
 &=a\left(x+\frac{b}{2a}\right)^2+\frac{4ac-b^2}{4a}
 \end{align*}
+The vertex of the parabola of function $y=ax^2+bx+c$ is $(-\frac{b}{2a},\frac{4ac-b^2}{4a})$.\\
+The axis of symmetry  for this function is $x=-\frac{b}{2a}$.
+
+\subsection{Intersections with $x$-axis}
+If the parabola intersects with the $x$-axis, then at the intersection points we have $y=0$. Therefore, solving the equation $ax^2+bx+c=0$ discloses the coordinates of the intersection points. According to the vertex form, the equation becomes 
+\begin{align*} 
+&a\left(x+\frac{b}{2a}\right)^2+\frac{4ac-b^2}{4a}=0\\
+\Rightarrow \quad &\left(x+\frac{b}{2a}\right)^2=\frac{b^2-4ac}{4a^2}\\
+\Rightarrow \quad &x+\frac{b}{2a}=\frac{\pm \sqrt{b^2-4ac}}{2a}\\
+\Rightarrow \quad &x=\frac{-b\pm \sqrt{b^2-4ac}}{2a}\\
+\end{align*}
+Finally, the intersection points are
+\[(\frac{-b - \sqrt{b^2-4ac}}{2a},0), \quad (\frac{-b + \sqrt{b^2-4ac}}{2a},0) .\]
+Apparently, if $b^2-4ac=0$, there is only one intersection point $(-\frac{b}{2a},0)$;
+If $b^2-4ac<0$, there's no intersection point (The parabola doesn't intersect with the $x$-axis).
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=0.7]
+
+\draw[thick,blue] (-1,3) parabola bend (2,-1.5) (5,3);
+\draw[->,thick] (-2,0) -- (6,0);
+\draw[->,thick] (0,-3) -- (0,4);
+\draw [dashed](2,3) -- (2,-3);
+\draw (0.29,0) -- (0.29,0.5);
+\draw (3.71,0) -- (3.71,0.5);
+
+\draw[<-](2,0.4) --(2.6,0.4);
+\draw[->](3.11,0.4) --(3.71,0.4);
 
 
+\coordinate [label=above:$d$] (d) at (2.85,0);
+\coordinate [label=below:$x$] (x) at (6,0);
+\coordinate [label=left:$y$] (y) at (0,4);
+\end{tikzpicture}
+\caption{Parabola of a quadratic function.}
+\label{fig:parabola}
+\end{figure}
+
+Given quadratic function $f(x)$, if its vertex is $(2,-1.5)$, and it intersects the $x$-axis at points $(1,0), (3,0)$, 
+we can find out the quadratic expression of $f(x)$ via two methods.
+
+\begin{itemize}
+\item Method 1: Using the vertex form \\
+Since the vertex is $(2,-1.5)$, $f(x)=a(x-2)^2-1.5$. Notice that point $(1,0)$ is on the curve, we have $f(1)=a(-1)^2-1.5 = 0, a=1.5$.
+\item Method 2: Giving the intersection points are $(1,0), (3,0)$, we have $f(x)=a(x-3)(x-1)$.\\ Since the vertex is $(2,-1.5)$, we have $f(2)=a(2-3)(2-1)=-1.5, a =1.5$.
+\end{itemize}
+It seems like Method 1 requires merely 2 points to determine the parabola, and Method 2 requires 3 points in order to solve the parabola. However, the two Methods both require the same amount of information to determine the parabola. This is because we have the vertex $(2,-1.5)$, which helps determine the third point whenever another point is provided. For example, if we are only given one intersection point (1,0), we can know that another intersection point is (3,0) as they are symmetrical. If we are not given the vertex we need at least three different points to determine the parabola.
+
+\subsection{Another Way to solve quadratic functions}
+Since solving the quadratic equations $ax^2+bx+c=0$ is equivalent to finding the intersection points to the $x$-axis for quadratic function $f(x)=ax^2+bx+c$, we can use the following method to solve quadratic equations.
 
 
+The key to this method is to find  the distance $d$ from one of the intersection points to the axis of symmetry of the function, as illustrated in Figure~\ref{fig:parabola}.
 
+Given equation $\frac{x^2}{2}-2x+\frac{1}{2}=0$, the axis of symmetry is $x=2$. Assume the two roots are $x_1, x_2$, we then have \[x_1=2-d, \quad x_2= 2+d.\]
+
+According to \emph{Vieta's Formula}, $x_1 \cdot x_2= \frac{\frac{1}{2}}{\frac{1}{2}}=1$, we have 
+\begin{align*}
+&(2-d)(2+d)=x_1 \cdot x_2 =1\\
+\Rightarrow\quad&2^2-d^2=1\\
+\Rightarrow\quad&d^2=2^2-1=3\\
+\Rightarrow\quad&d=\sqrt{3}\\
+\Rightarrow\quad&x_1=2-d=2-\sqrt{3},\quad x_2=2+d=2+\sqrt{3}.
+\end{align*}
+
+This method is recommended by math Professor Po-Shen Loh from CMU(Carnegie Mellon University).
+\subsection{Derivative}
+For quadratic function the derivatives at different points are usually different. For example, given $f(x)=\frac{3}{2}(x-2)^2-\frac{3}{2}=\frac{3}{2}x^2-6x+\frac{9}{2}$, its derivative function $f'(x)=3x-6$. This means the derivative varies following the change of $x$. We can get the derivative of $f(x)$ at point $(1,0)$ using the derivative function $f'(x)$ : $f'(1)=3-6=-3$. Therefore, it is easy to determine the tangent line passing through $(1,0)$: $y=-3(x-1)+0$. The perpendicular line is $\frac{1}{3}$
+
+
+\section{tips}
+We have to know the following:
+\begin{enumerate}
+\item $(a+b)^2=a^2+2ab+b^2$
+\item $(a-b)^2=a^2-2ab+b^2$
+\item $(a+b)^3=a^3+3a^2b+3ab^2+b^3$
+\item $(a-b)^3=a^3-3a^2b+3ab^2-b^3$
+\item \[(a+b)^n=\binom{n}{0}a^n+ \binom{n}{1}a^{n-1}b+ \binom{n}{2}a^{n-2}b^2+\cdots + \binom{n}{n-1}ab^{n-1} +\binom{n}{n}b^n=\sum^n_{k=0}\binom{n}{k}a^{n-k}b^k\]
+\item \[(a-b)^n=\binom{n}{0}a^n-\binom{n}{1}a^{n-1}b+\cdots + (-1)^{n-1}\binom{n}{n-1}ab^{n-1} +(-1)^n\binom{n}{n}b^n=\sum^n_{k=0}(-1)^k\binom{n}{k}a^{n-k}b^k\]
+\end{enumerate}
 
 
 
