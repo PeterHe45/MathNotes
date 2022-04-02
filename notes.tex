@@ -24,6 +24,8 @@
 \usepackage{cancel}
 \usepackage{xfrac}
 \usepackage{tikz}
+\usepackage{array}
+\usepackage{tabularx}
 
 %SetFonts
 
@@ -169,8 +171,132 @@ According to \emph{Vieta's Formula}, $x_1 \cdot x_2= \frac{\frac{1}{2}}{\frac{1}
 
 This method is recommended by math Professor Po-Shen Loh from CMU(Carnegie Mellon University).
 \subsection{Derivative}
-For quadratic function the derivatives at different points are usually different. For example, given $f(x)=\frac{3}{2}(x-2)^2-\frac{3}{2}=\frac{3}{2}x^2-6x+\frac{9}{2}$, its derivative function $f'(x)=3x-6$. This means the derivative varies following the change of $x$. We can get the derivative of $f(x)$ at point $(1,0)$ using the derivative function $f'(x)$ : $f'(1)=3-6=-3$. Therefore, it is easy to determine the tangent line passing through $(1,0)$: $y=-3(x-1)+0$. The perpendicular line is $\frac{1}{3}$
+For quadratic function the derivatives at different points are usually different. For example, given $f(x)=\frac{3}{2}(x-2)^2-\frac{3}{2}=\frac{3}{2}x^2-6x+\frac{9}{2}$, its derivative function $f'(x)=3x-6$. This means the derivative varies following the change of $x$. We can get the derivative of $f(x)$ at point $(1,0)$ using the derivative function $f'(x)$ : $f'(1)=3-6=-3$. Therefore, it is easy to determine the tangent line passing through $(1,0)$: $y=-3(x-1)+0$. The perpendicular line passing through $(1,0)$: $y=\frac{1}{3}(x-1)+0$. 
 
+To make it clear, the derivative of $kx^2$ is $2kx$, and the derivative of $kx$ is $k$.  Figure~\ref{fig:derivative} illustrates how to compute the derivative at $x_0$.
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=0.7]
+
+
+\draw[->,thick] (-1.5,0) -- (6,0);
+\draw[->,thick] (0,-1.5) -- (0,4);
+\draw [thick, dotted](2,0) -- (2,1.4);
+\draw [thick, dotted] (4,0)--(4,3);
+\draw [thick, dotted] (2,1.4)--(4,1.4);
+\draw [thick, blue] (-1,-1) -- (4,3);
+
+\coordinate [label=above:\tiny $f(x_0)$] (f1) at (2, 1.4);
+\coordinate [label=above:\tiny $f(x_0+\Delta x)$] (f2) at (4, 3);
+
+\coordinate [label=above:\tiny $\Delta x$] (d) at (3,0.9);
+\coordinate [label=below:$x$] (x) at (6,0);
+\coordinate [label=left:$y$] (y) at (0,4);
+\end{tikzpicture}
+\caption{Derivative at $x_0$}
+\label{fig:derivative}
+\end{figure}
+
+
+Let $f(x)=kx$, 
+\begin{align*}
+f'(x_0) &=\lim_{\Delta x \rightarrow 0} \frac{f(x_0+\Delta x) - f(x_0)}{\Delta x}\\
+&=\lim_{\Delta x \rightarrow 0} \frac{k(x_0+\Delta x) - kx_0}{\Delta x}\\
+&=\lim_{\Delta x \rightarrow 0} \frac{k \Delta x}{\Delta x}=k.
+\end{align*}
+Similarly, let $g(x) = kx^2$,
+\begin{align*}
+g'(x_0) &=\lim_{\Delta x \rightarrow 0} \frac{g(x_0+\Delta x) - g(x_0)}{\Delta x}\\
+&=\lim_{\Delta x \rightarrow 0} \frac{k(x_0+\Delta x)^2 - kx_0^2}{\Delta x}\\
+&=\lim_{\Delta x \rightarrow 0} \frac{k(x_0^2+2x_0 \Delta x + \Delta x^2)-kx_0^2}{\Delta x}=k.\\
+&=\lim_{\Delta x \rightarrow 0} (2k x_0+k \Delta x)\\
+&=2kx_0
+\end{align*}
+Therefore, $g'(x)=2kx$.
+
+\section{Compound Interest and $e$}
+\subsection{Change Base of Logarithm Functions}
+We start with logarithm functions. Suppose we have function $f(x)=\log_5x$. Lets examine the variable and the value of this function, illustrated in the following table.
+
+\renewcommand{\arraystretch}{2}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x$ & $1$ & $5^1$ & $5^2$ & $5^3$\\
+\hline
+$f(x)$ & $0$ & $1$ & $2$ & $3$\\
+\hline
+\end{tabular}
+\end{center}
+
+Now if we have another function $g(x)=\log_3x$ with the same set of input values, we have
+
+\renewcommand{\arraystretch}{2}
+\begin{center}
+\begin{tabular}{|>{\centering}p{1cm}|>{\centering}p{1cm}|>{\centering}p{1cm}|>{\centering}p{1cm}|>{\centering\arraybackslash}p{1cm}|}
+\hline
+$x$ & $1$ & $5^1$ & $5^2$ & $5^3$\\
+\hline
+$g(x)$ & $0$ & $\log_3 5$ & $2\log_3 5$ & $3 \log_3 5$\\
+\hline
+\end{tabular}
+\end{center}
+Obviously, $f(x)$ and $g(x)$ have the following
+\[\log_5 x = \frac{\log_3 x}{\log_3 5} .\]
+In general, we can change the base of any $f(x)$, where $f(x) = \log_a x$ ($a \ne 0$, $a$ is a constant), such that 
+$f(x)=\frac{\log_b x}{\log_b a}$. 
+For convenience, whenever we study a logarithm function, we always change the base of the function to a special constant  $e$. Therefore, any function $f(x)=\log_a x$ can be expressed as \[f(x)=\frac{\log_e x}{\log_e b}= \frac{\ln x}{\ln b}= \frac {1}{\ln b}\cdot \ln x\]
+Notice that $\frac{1}{\ln b}$ is just a constant, this means the whole family of logarithm functions can be expressed as $k \cdot \ln x$, where $k$ is a constant.
+
+$f(x)=ln^x$
+$g(x)=f^-1$\\
+$(x)=e^x$\\
+$g'(x)=e^x$\\
+$e=(1+\frac{1}{n})^n$
+
+\subsection{What is $e$?}
+Now let's study the special constant $e$. We use an example to explain the origin of $e$. Suppose we deposit 1\$ to a bank with an anual interest of 100\%. Then at the end of the year, we can get 1\$+1\$=2\$. To attract more customers, the bank decides to pay the interest once half a year, and each time, the bank will pay 50\%. The amount you would get at the end of the year would become 
+\[\left(1+1\cdot \frac{1}{2}\right)+\left(1+\frac{1}{2}\right)\cdot \frac{1}{2}=\left(1+\frac{1}{2}\right) \cdot \left(1+\frac{1}{2}\right)=\left(1+\frac{1}{2}\right)^2\]
+What if the bank pays the interest three times a year, and each time it pays $\frac{1}{3}$? The amount that we would get should be
+\[\left(1+1\cdot \frac{1}{3}\right)+\left(1+\frac{1}{3}\right)\cdot \frac{1}{3}+\left(1+\frac{1}{3}\right)^2 \cdot \left(1+\frac{1}{3}\right)=\left(1+\frac{1}{3}\right)^3\]
+Hence, if the bank pays the interest $n$ times a year, and each time paying $\frac{1}{n}$, the total amount we could get is \[\left(1+\frac{1}{n}\right)^n\]
+
+With the help of a calculator, we studied the value of $\left(1+\frac{1}{n}\right)^n$, by varying the value of $n$. From the following table, we see that as the value of $n$ increases, the value of $\left(1+\frac{1}{n}\right)^n$ approaches a number around 2.71. 
+\begin{center}
+\begin{tabular}{|>{\centering}p{1.5cm}|>{\centering}p{1cm}|>{\centering}p{1cm}|>{\centering}p{1cm}|>{\centering}p{1cm}|>{\centering\arraybackslash}p{1cm}|}
+\hline
+$n$ & $1$ & $2$ & $10$ & $100$ & $200$\\
+\hline
+$\left(1+\frac{1}{n}\right)^n$ & $2$ & $2.250$ & $2.594$ & $2.705$ & $2.712$\\
+\hline
+\end{tabular}
+\end{center}
+
+Finally we reached the definition of $e$:
+\[e=\lim_{n\rightarrow \infty}\left(1+\frac{1}{n}\right)^n\]
+This is also referred as the continuous compound interest. 
+\subsection{Exponential Function $e^x$} 
+It is easy to see that the inverse function of $f(x)=\ln x$ is $g(x)=f^{-1}(x)=e^x$.
+lets reconsider that continuous compound interest model, if the initial annual interest is $x$, and the bank pays three times a year and each time it pays $\frac{x}{3}$, then the total amount we should get is $\left(1+\frac{x}{3}\right)^3$. If the bank pays $n$ time a year, the total amount should be $(1+\frac{x}{n})^n$. Let $\frac{1}{t}=\frac{x}{n}$,we have $n=tx$, and \[\left(1+\frac{x}{n}\right)^n = \left(1+\frac{1}{t}\right)^{tx} = \left[\left(1+\frac{1}{t}\right)^t\right]^x=e^x, t\rightarrow \infty \]
+Therefore, 
+\begin{align*}
+e^x&=\left(1+\frac{x}{n}\right)^n\\
+&= 1^n+\binom{n}{1}\cdot\frac{x}{n} + \binom{n}{2}\cdot\frac{x^2}{n^2} + \cdots + \binom{n}{n-1}\cdot\frac{x^{n-1}}{n^{n-1}} + \frac{x^n}{n^n} \\
+&=1+n\cdot\frac{x}{n}+\frac{n(n-1)}{2!}\cdot\frac{x^2}{n^2}+ \cdots + \frac{n(n-1)\cdot2}{(n-1)!}\cdot\frac{x^{n-1}}{n^{n-1}} + \frac{x^n}{n^n}
+\end{align*}
+
+When $n\rightarrow \infty$, for any constant $k>0$, we have
+\[\lim_{n\rightarrow \infty} \frac{n(n-1)\cdots(n-k+1)}{n^k}=1,\] and thus 
+\begin{align*}
+e^x=1+x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots
+\end{align*} 
+
+Finally,
+\begin{align*}
+(e^x)'&=1'+x' + \left(\frac{x^2}{2!}\right)' + \left(\frac{x^3}{3!}\right)' + \cdots\\
+&=1+x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots\\
+&=e^x
+\end{align*}
 
 \section{tips}
 We have to know the following:
