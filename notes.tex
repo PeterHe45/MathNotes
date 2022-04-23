@@ -201,8 +201,20 @@ Expanding the left hand side of the above equation,
 
 The above equation implies that $b = -a(x_1 + x_2), c = ax_1 x_2$. Therefore the relationship between roots and coefficients is 
 
+
+
 \[x_1 + x_2= -\frac{b}{a}, \quad  x_1 x_2 = \frac{c}{a}.\]
 This is known as Vieta's Formula.
+
+The Vieta's formula for cubic equation is stated as the following. Given cubic equation $ax^3+bx^2+cx+d=0$ with three roots, $\alpha, \beta, \gamma$, we have 
+\begin{align*}
+\alpha + \beta + \gamma &= (-1)^1 \cdot \frac{b}{a} = -\frac{b}{a}\\
+\alpha\beta + \alpha\gamma + \beta\gamma &= (-1)^2 \cdot \frac{c}{a} = \frac{c}{a}\\
+\alpha\beta\gamma &= (-1)^3 \cdot \frac{d}{a} = -\frac{d}{a}
+\end{align*}
+We can see that the power of $-1$ equals to the number of elements in each term of the left hand side in the equation. For example, in the second equation, each term has 2 elements, the right hand side therefore is $(-1)^2 \cdot \frac{c}{a}$.
+
+In fact, the above three equations are the elementary symmetric polynomials of $\alpha, \beta, $ and $\gamma$. We will discuss the symmetric polynomials later.
 
 \subsection{Another Way to solve quadratic equations}
 Since solving the quadratic equations $ax^2+bx+c=0$ is equivalent to finding the intersection points to the $x$-axis for quadratic function $f(x)=ax^2+bx+c$, we can use the following method to solve quadratic equations.
@@ -222,6 +234,18 @@ According to \emph{Vieta's Formula}, $x_1 \cdot x_2= \frac{\frac{1}{2}}{\frac{1}
 \end{align*}
 
 This method is recommended by math Professor Po-Shen Loh from CMU(Carnegie Mellon University).
+
+\newpage
+\subsection{Symmetric Polynomials}
+A symmetric polynomial is a polynomial where if you switch any pair of variables, it remains the same.
+For example, $x^2+y^2-3xy$ is a symmetric polynomial. If we switch $x$ and $y$, it becomes $y^2 + x ^2 - 3yx$, which is the same as the original polynomial. Symmetric polynomials are closely related to Vieta's formula, and Newton's identities.
+
+Given a problem where $x=2-\sqrt{3}, y=2+\sqrt{3}$, find $x^3 + y^3$. One way to solve this problem is to calculate $(2-\sqrt{3})^3$ and $(2+\sqrt{3})^3$, and its very tedious in calculation. A smarter way is to manipulate 
+\[x^3+y^3=(x+y)(x^2+y^2-xy)=(x+y)((x+y)^2-3xy)=4(4^2-3)=52,\]
+since it is quite easy to calculate $x+y=4$ and $xy=1$.
+
+But how do you know that such manipulation will be an easier way to solve the problem?
+
 \subsection{Derivative}
 For quadratic function the derivatives at different points are usually different. For example, given $f(x)=\frac{3}{2}(x-2)^2-\frac{3}{2}=\frac{3}{2}x^2-6x+\frac{9}{2}$, its derivative function $f'(x)=3x-6$. This means the derivative varies following the change of $x$. We can get the derivative of $f(x)$ at point $(1,0)$ using the derivative function $f'(x)$ : $f'(1)=3-6=-3$. Therefore, it is easy to determine the tangent line passing through $(1,0)$: $y=-3(x-1)+0$. The perpendicular line passing through $(1,0)$: $y=\frac{1}{3}(x-1)+0$. 
 
