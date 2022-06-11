@@ -302,8 +302,32 @@ P_4&=\alpha^4 +\beta^4 = (\alpha + \beta)P_3-\alpha\beta \cdot P_2 = \frac{2}{3}
 \end{align*} 
 
 \subsection{Newton's Identity for Three Variables}
-
-
+Lets suppose there are three variables in the Newton Identity $a$, $b$ and $c$.
+Then applying the Viete's formula, we get
+\begin{align*}
+e_1&=a+b+c\\
+e_2&=ab+bc+ac\\
+e_3&=abc\\
+\end{align*} 
+We can also work out  the polynomials in the form of $e_1=a+b+c$
+\begin{align*}
+P_0&=a^0+b^0+c^0=3\\
+P_1&=a^1+b^1+c^1\\
+P_2&=a^2+b^2+c^2\\
+P_3&=a^3+b^3+c^3\\
+P_4&=a^4+b^4+c^4\\
+\end{align*} 
+Trying to solve $P_4$, we can see that
+\begin{align*}
+P_4&=(a+b+c)(a^3+b^3+c^3)-ab^3-ac^3-ba^3-bc^3-ca^3-cb^3\\
+&=e_1 \cdot P_3 -ab(b^2+a^2)-bc(b^2+c^2)-ac(a^2+c^2)\\
+&=e_1 \cdot P_3 -(ab+bc+ac)(a^2+b^2+c^2)+abc(a+b+c)\\
+&=e_1 \cdot P_3 - e_2 \cdot P_2 - e_3 \cdot P_1\\
+\end{align*} 
+So we get that:
+\begin{align*}
+P_n=e_1 \cdot P_n-1 - e_2 \cdot P_n-2 - e_3 \cdot P_n-3
+\end{align*} 
 
 \section{Practise}
 \begin{enumerate}
