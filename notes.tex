@@ -27,6 +27,7 @@
 \usepackage{tikz}
 \usepackage{array}
 \usepackage{tabularx}
+\usepackage{amsthm}
 
 %SetFonts
 
@@ -329,6 +330,18 @@ So we get that:
 P_n=e_1 \cdot P_n-1 - e_2 \cdot P_n-2 - e_3 \cdot P_n-3
 \end{align*} 
 
+
+\section{Cauchy Inequality}
+Given two series $a_1, a_2, \cdots, a_n$ and $b_1, b_2, \cdots, b_n$, the Cauchy inequality states that
+\[(a_1^2+a_2^2+\cdots+a_n^2)(b_1^2+b_2^2+\cdots+b_n^2)\ge (a_1 b_1 + a_2 b_2 +\cdots + a_n b_n)^2,\]
+and the equality holds only if 
+\[\frac{a_1}{b_1}=\frac{a_2}{b_2}=\cdots=\frac{a_n}{b_n}.\]
+\begin{proof}
+We show the proof of Cauchy inequality
+\end{proof}
+
+
+
 \section{Practise}
 \begin{enumerate}
 \item
@@ -348,6 +361,17 @@ x+y&=-1\\
 xy&=-6
 \end{align*}
 Apparently, $x$ and $y$ are the roots of the quadratic equation $t^2+t-6=0$. Solving this equation we get $(t-3)(t+2)=0$, therefore $x=3, y=-2$ or $x=-2, y=3$.
+
+
+\item
+Given positive numbers $a$, $b$, $c$, such that $2a+3b+18c=2022$ and they make $a^2+b^2+c^2$ the smallest possible. Find $a+b+c$.\\
+\textbf{Solution}: 
+According to Cauchy inequality 
+\[(a^2+b^2+c^2)(2^2+3^2+18^2)\ge(2a+3b+18c)^2  \quad \Rightarrow \quad a^2+b^2+c^2 \ge 6 \times 2022.\]
+$a^2+b^2+c^2$ achieves its minimum when $\frac{a}{2}=\frac{b}{3}=\frac{c}{18}$.
+Let $\frac{a}{2}=\frac{b}{3}=\frac{c}{18}=t$, we have $a=2t$, $b=3t$, and $c=18t$ and 
+\[2a+3b+18c=4t+9t+324t=2022 \quad \Rightarrow \quad  t=6. \]
+Therefore, $a+b+c=2t+3t+18t=138$.
 \end{enumerate}
 
 
