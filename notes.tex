@@ -323,11 +323,11 @@ Trying to solve $P_4$, we can see that
 P_4&=(a+b+c)(a^3+b^3+c^3)-ab^3-ac^3-ba^3-bc^3-ca^3-cb^3\\
 &=e_1 \cdot P_3 -ab(b^2+a^2)-bc(b^2+c^2)-ac(a^2+c^2)\\
 &=e_1 \cdot P_3 -(ab+bc+ac)(a^2+b^2+c^2)+abc(a+b+c)\\
-&=e_1 \cdot P_3 - e_2 \cdot P_2 - e_3 \cdot P_1\\
+&=e_1 \cdot P_3 - e_2 \cdot P_2 + e_3 \cdot P_1\\
 \end{align*} 
 So we get that:
 \begin{align*}
-P_n=e_1 \cdot P_n-1 - e_2 \cdot P_n-2 - e_3 \cdot P_n-3
+P_n=e_1 \cdot P_n-1 - e_2 \cdot P_n-2 + e_3 \cdot P_n-3
 \end{align*} 
 
 
@@ -382,7 +382,20 @@ $a^2+b^2+c^2$ achieves its minimum when $\frac{a}{2}=\frac{b}{3}=\frac{c}{18}$.
 Let $\frac{a}{2}=\frac{b}{3}=\frac{c}{18}=t$, we have $a=2t$, $b=3t$, and $c=18t$ and 
 \[2a+3b+18c=4t+9t+324t=2022 \quad \Rightarrow \quad  t=6. \]
 Therefore, $a+b+c=2t+3t+18t=138$.
+
+\item
+Given $x^3-279x-810=(x-a)(x-b)(x-c)$, compute $a^3+b^3+c^3$.\\
+\textbf{Solution}: 
+For equation: $x^3-279x-810=0$ It has 3 roots: $a, b, c$. According to Vieta's formula, 
+\begin{align*}
+e_1&=a+b+c = 0 \\
+e_2&=ab+bc+ac = -279 \\
+e_3&=abc= 810
+\end{align*}
+Now we use Newton's identity to calculate the value of $P_3= a^3+b^3+c^3$. First, \[ P_2 = a^2+b^2+c^2 = (a+b+c)^2-2(ab+bc+ac)= 558. \]
+Then, \[ P_3=e_1 P_2 - e_2 P_1 + e_3 P_0 = 2430. \]
 \end{enumerate}
+
 
 
 
