@@ -337,8 +337,18 @@ Given two series $a_1, a_2, \cdots, a_n$ and $b_1, b_2, \cdots, b_n$, the Cauchy
 and the equality holds only if 
 \[\frac{a_1}{b_1}=\frac{a_2}{b_2}=\cdots=\frac{a_n}{b_n}.\]
 \begin{proof}
-We show the proof of Cauchy inequality
+We show the proof of Cauchy inequality. Given quadratic equation $a_1^2 x^2 - 2 a_1 b_1x + b_1^2=0$ where $\Delta = 0$,  the equation has one root, $x=\frac{b_1}{a_1}$. We can have another equation $a_2^2 x^2 - 2 a_2 b_2x + b_2^2=0$, which also has one root, $x=\frac{b_2}{a_2}$. Similarly, we can have equation $a_i^2 x^2 - 2 a_i b_2x + b_i^2=0$, which has one root $x=\frac{b_i}{a_i}$. if we add all of these equations together we get  a new equation
+\[(a_1^2 + a_2^2+ \cdots + a_n^2)x^2 -2(a_1 b_1 +  a_2 b_2 + \cdots +  a_n b_n)x + (b_1^2 + b_2^2+ \cdots + b_n^2)=0,\] 
+which can be rearranged as
+\[(a_1x - b_1)^2+(a_2x - b_2)^2 +  \cdots +(a_nx - b_n)^2 = 0 .\]
+The above equation has 1 root, only if $(a_1x - b_1)^2=0$, $(a_2x - b_2)^2=0$ , $\cdots$ , $(a_nx - b_n)^2=0$  and $x=\frac{b_1}{a_1} = \frac{b_2}{a_2} = \cdots = \frac{b_n}{a_n}$. This implies that $\Delta \le 0$ for the above equation. Therefore, we have 
+\begin{align*}
+&\Delta = 4(a_1 b_1 +  a_2 b_2 + \cdots +  a_n b_n)^2 - 4(a_1^2 + a_2^2+ \cdots + a_n^2)(b_1^2 + b_2^2+ \cdots + b_n^2) \le 0 \\
+\Rightarrow \quad & (a_1 b_1 +  a_2 b_2 + \cdots +  a_n b_n)^2 - (a_1^2 + a_2^2+ \cdots + a_n^2)(b_1^2 + b_2^2+ \cdots + b_n^2) \le 0 \\
+\end{align*}
+Which indicates that \[ (a_1^2 + a_2^2+ \cdots + a_n^2)(b_1^2 + b_2^2+ \cdots + b_n^2) \ge (a_1 b_1 +  a_2 b_2 + \cdots +  a_n b_n)^2 .\]
 \end{proof}
+
 
 
 
