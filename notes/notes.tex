@@ -349,6 +349,10 @@ The above equation has 1 root, only if $(a_1x - b_1)^2=0$, $(a_2x - b_2)^2=0$ , 
 Which indicates that \[ (a_1^2 + a_2^2+ \cdots + a_n^2)(b_1^2 + b_2^2+ \cdots + b_n^2) \ge (a_1 b_1 +  a_2 b_2 + \cdots +  a_n b_n)^2 .\]
 \end{proof}
 
+\section{AM-GM Inequality}
+The AM-GM inequality states that for a set of nonnegative numbers $a_1, a_2, \cdots, a_n$, their arithmetic mean (AM) is no less than their geometric mean (GM), e.g.
+\[\frac{a_1+a_2+\cdots+a_n}{n} \ge \sqrt[n]{a_1 \cdot a_2 \cdot \cdots \cdot a_n}, \]
+and the equality is achieved when $a_1=a_2=\cdots=a_n$.
 
 
 
@@ -394,6 +398,23 @@ e_3&=abc= 810
 \end{align*}
 Now we use Newton's identity to calculate the value of $P_3= a^3+b^3+c^3$. First, \[ P_2 = a^2+b^2+c^2 = (a+b+c)^2-2(ab+bc+ac)= 558. \]
 Then, \[ P_3=e_1 P_2 - e_2 P_1 + e_3 P_0 = 2430. \]
+
+\item
+Let $A, M, C$ be nonnegative integers such that $A+M+C=10$. What is the maximum value of $A \cdot M \cdot C + A\cdot M + M \cdot C +C \cdot A$?\\
+\textbf{Solution}: 
+Since $(1+A)(1+M)(1+C)=1+A+M+C+AM+MC+AC+AMC=11+AM+MC+CA+AMC$, we have 
+\[A \cdot M \cdot C + A\cdot M + M \cdot C +C \cdot A=(1+A)(1+M)(1+C)-11.\]
+According to $AM-GM$ inequality, we have 
+\begin{align*}
+&\sqrt[3]{(1+A)(1+M)(1+C)}\le \frac{(1+A)+(1+M)+(1+C)}{3} \\
+&(1+A)(1+M)(1+C)\le \left(\frac{(1+A)+(1+M)+(1+C)}{3}\right)^3 = \left(\frac{13}{3}\right)^3 = 81 \frac{10}{27}
+\end{align*}
+Therefore,
+\[A \cdot M \cdot C + A\cdot M + M \cdot C +C \cdot A=(1+A)(1+M)(1+C)-11 \le  81 \frac{10}{27} - 11 =70\frac{10}{27},\]
+and the equality holds when $A=M=C=\frac{10}{3}$.
+However, in this problem $A, M, C$ are integers. The maximum is achieved when $A, M, C$ are integers close to $\frac{10}{3}$.\\
+Finally, when $ A=3, M=3, C=4$ 
+\[A \cdot M \cdot C + A\cdot M + M \cdot C +C \cdot A=(1+A)(1+M)(1+C)-11 = 4 \cdot 4 \cdot 5 -11 = 69. \]
 \end{enumerate}
 
 
